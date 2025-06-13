@@ -1,0 +1,43 @@
+import java.util.*;
+public class Atransport
+{
+    String name;
+    int w,charge;
+    double surcharge,amt;
+    public void accept()
+    {
+        Scanner sc = new Scanner (System.in);
+        System.out.println ("Enter your name:");
+        name = sc.nextLine();
+        System.out.println ("Enter the weight of your parcel in kgs:");
+        w = sc.nextInt();
+    }
+    public void calculate()
+    {
+        if (w<=10)
+        {
+            charge = w*25;
+        }
+        else if (w>10 && w<=30)
+        {
+            charge = (w-10)*20;
+        }
+        else if (w>30)
+        {
+            charge = (w-30)*10;
+        }
+        surcharge = 0.05*charge;
+        amt = charge+surcharge;
+    }
+    public void print()
+    {
+        System.out.println("Name"+"\t\t\tWeight"+"\t\tBill amount"+"\n"+name+"\t\t"+w+"\t\t"+amt);
+    }
+    public static void main (String[]args)
+    {
+        Atransport t = new Atransport ();
+        t.accept();
+        t.calculate();
+        t.print();
+    }
+}
