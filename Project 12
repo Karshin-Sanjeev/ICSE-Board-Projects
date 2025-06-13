@@ -1,0 +1,43 @@
+import java.util.*;
+public class Project_12
+{
+    public static void main (String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int a,b,p,k,i,j;
+        char chr;
+        String str;
+        System.out.println ("Enter 1 to print Pattern 1.");
+        System.out.println ("Enter 2 to print Pattern 2.");
+        k = sc.nextInt();
+        switch(k)
+        {
+            case 1:
+                for (a=69;a>=65;a--)
+                {
+                    for (b=65;b<=a;b++)
+                    {
+                        chr = (char)(b);
+                        System.out.print(chr);
+                    }
+                    System.out.println();
+                }
+                break;
+            case 2:
+                str = "BLUE";
+                p = str.length();
+                for (i=0;i<p;i++)
+                {
+                    for (j=0;j<=i;j++)
+                    {
+                        chr = str.charAt(i);
+                        System.out.print(chr);
+                    }
+                    System.out.println();
+                }
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+    }
+}
