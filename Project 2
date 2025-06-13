@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Project_2 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String[] names = new String[35];
+        double[] percentages = new double[35];
+        System.out.println("Enter names and percentages of 35 students:");
+        for (int i = 0; i < 35; i++) 
+        {
+            System.out.println ("Student " + (i + 1) + ": ");
+            names[i] = sc.nextLine();
+            System.out.println ("Percentage: ");
+            percentages[i] = sc.nextDouble();
+            sc.nextLine();
+        }
+        selectionSort(names, percentages);
+        System.out.println("\nStudents in Descending Order:");
+        for (int i = 0; i < 35; i++) 
+        {
+            System.out.println(names[i] + ": " + percentages[i] + "%");
+        }
+        System.out.println("\nTop 10 Students:");
+        for (int i = 0; i < 10; i++) 
+        {
+            System.out.println(names[i] + ": " + percentages[i] + "%");
+        }
+    }
+    private static void selectionSort(String[] names, double[] percentages) 
+    {
+        int n = names.length;
+        for (int i = 0; i < n - 1; i++) 
+        {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) 
+            {
+                if (percentages[j] > percentages[minIndex]) 
+                {
+                    minIndex = j;
+                }
+            }
+            String tempName = names[minIndex];
+            names[minIndex] = names[i];
+            names[i] = tempName;
+            double tempPercentage = percentages[minIndex];
+            percentages[minIndex] = percentages[i];
+            percentages[i] = tempPercentage;
+        }
+    }
+}
