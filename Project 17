@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Project_17 
+{
+    public static void sumSeries(int n, double x) 
+    {
+        double sum = 0;
+        double term;
+        int sign = 1;
+        for (int i = 1; i <= n; i++) 
+        {
+            term = sign * x / i;
+            sum += term;
+            sign *= -1;
+        }
+        System.out.println("Sum of the first series: " + sum);
+    }
+    public static void sumSeries() 
+    {
+        int sum = 0;
+        int term = 1;
+        for (int i = 1; i <= 20; i++) 
+        {
+            sum += term;
+            term *= (i + 1); 
+        }
+        System.out.println("Sum of the second series: " + sum);
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of n: ");
+        int n = sc.nextInt();
+        System.out.println("Enter the value of x: ");
+        double x = sc.nextDouble();
+        sumSeries(n, x);
+        sumSeries();
+    }
+}
