@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Project_16 
+{
+    public void check(String str, char ch)
+    {
+        int count = 0;
+        str = str.toLowerCase();
+        for (int i = 0; i < str.length(); i++)
+        {
+            if (str.charAt(i) == ch)
+            {
+                count++;
+            }
+        }
+        System.out.println("Frequency of '" + ch + "' in '" + str + "' is: " + count);
+    }
+    public void check(String s1)
+    {
+        s1 = s1.toLowerCase();
+        System.out.println("Vowels in '" + s1 + "' are: ");
+        boolean vowel = false;
+        for (int i = 0; i < s1.length(); i++) 
+        {
+            char c = s1.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') 
+            {
+                System.out.println(c + " ");
+                vowel = true;
+            }
+        }
+        if (!vowel) 
+        {
+            System.out.println("No vowels found.");
+        }
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String str = sc.nextLine();
+        System.out.println("Enter a character: ");
+        char ch = sc.next().charAt(0);
+        sc.nextLine();
+        System.out.println("Enter another string: ");
+        String s1 = sc.nextLine();
+        Project_16 obj = new Project_16();
+        obj.check(str, ch);
+        obj.check(s1);
+    }
+}
