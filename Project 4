@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Project_4
+{
+    private static void calculateZ()
+    {
+        double x, y = 5.5, z;
+        for (x = -10; x <= 10; x += 2) 
+        {
+            z = (Math.pow(x, 3) + 0.5 * x) / y;
+            System.out.println("x = " + x + ", Z = " + z);
+        }
+    }
+    private static void FloydsTriangle() 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println ("Enter the number of rows for Floyd's Triangle: ");
+        int rows = sc.nextInt();
+        int number = 1;
+        for (int i = 1; i <= rows; i++) 
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print(number + " ");
+                number++;
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        System.out.println("Enter 1 to calculate Z.");
+        System.out.println("Enter 2 to print Floyd's triangle.");
+        choice = sc.nextInt();
+        switch (choice)
+        {
+            case 1:
+                calculateZ();
+                break;
+            case 2:
+                FloydsTriangle();
+                break;
+            default:
+                System.out.println("Invalid choice.");
+        }
+    }
+}
