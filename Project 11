@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Project_11 
+{
+    public double volume(double r) 
+    {
+        return (4.0 / 3.0) * (22.0 / 7.0) * Math.pow(r, 3);
+    }
+    public double volume(double h, double r) 
+    {
+        return (22.0 / 7.0) * Math.pow(r, 2) * h;
+    }
+    public double volume(double l, double b, double h)
+    {
+        return l * b * h;
+    }
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        Project_11 calculator = new Project_11();
+        System.out.println("Enter the radius of the sphere: ");
+        double sphereRadius = sc.nextDouble();
+        double sphereVolume = calculator.volume(sphereRadius);
+        System.out.println("Volume of sphere: " + sphereVolume);
+        System.out.println("Enter the height and radius of the cylinder: ");
+        double cylinderHeight = sc.nextDouble();
+        double cylinderRadius = sc.nextDouble();
+        double cylinderVolume = calculator.volume(cylinderHeight, cylinderRadius);
+        System.out.println("Volume of cylinder: " + cylinderVolume);
+        System.out.println("Enter the length, breadth, and height of the cuboid: ");
+        double cuboidLength = sc.nextDouble();
+        double cuboidBreadth = sc.nextDouble();
+        double cuboidHeight = sc.nextDouble();
+        double cuboidVolume = calculator.volume(cuboidLength, cuboidBreadth, cuboidHeight);
+        System.out.println("Volume of cuboid: " + cuboidVolume);
+    }
+}
