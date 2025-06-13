@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Final_Project 
+{
+    public static double area(double a, double b, double c) 
+    {
+        double s = (a + b + c) / 2;
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+    public static double area(int a, int b, int height) 
+    {
+        return 0.5 * height * (a + b);
+    }
+    public static double area(double diagonal1, double diagonal2) 
+    {
+        return 0.5 * diagonal1 * diagonal2;
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the sides of the triangle: ");
+        double side1 = sc.nextDouble();
+        double side2 = sc.nextDouble();
+        double side3 = sc.nextDouble();
+        double triangleArea = area(side1, side2, side3);
+        System.out.println("Enter the parallel sides and height of the trapezium: ");
+        int parallelSide1 = sc.nextInt();
+        int parallelSide2 = sc.nextInt();
+        int height = sc.nextInt();
+        double trapeziumArea = area(parallelSide1, parallelSide2, height);
+        System.out.println("Enter the diagonals of the rhombus: ");
+        double diagonal1 = sc.nextDouble();
+        double diagonal2 = sc.nextDouble();
+        double rhombusArea = area(diagonal1, diagonal2);
+        System.out.println("Triangle area: " + triangleArea);
+        System.out.println("Trapezium area: " + trapeziumArea);
+        System.out.println("Rhombus area: " + rhombusArea);
+    }
+}
