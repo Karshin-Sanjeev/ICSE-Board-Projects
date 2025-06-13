@@ -1,0 +1,19 @@
+public class Project_9
+{
+    private static boolean isTechNumber(int n) 
+    {
+        int n1 = n/100;
+        int n2 = n%100;
+        return n==Math.pow((n1 + n2), 2);
+    }
+    public static void main(String[]args) 
+    {
+        for (int i=1000;i<10000;i++) 
+        {
+            if (isTechNumber(i)) 
+            {
+                System.out.println(i);
+            }
+        }
+    }
+}
