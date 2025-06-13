@@ -1,0 +1,26 @@
+import java.util.*;
+public class Project_5
+{
+    public static boolean isVowel(char c) 
+    {
+        return "AEIOU".indexOf(c) != -1;
+    }
+    public static void main(String[]args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        String input = sc.nextLine();
+        String upperCaseInput = input.toUpperCase();
+        System.out.println("Uppercase string: " + upperCaseInput);
+        int vowelPairCount = 0;
+        for (int i = 0; i < upperCaseInput.length() - 1; i++) 
+        {
+            if (isVowel(upperCaseInput.charAt(i)) && isVowel(upperCaseInput.charAt(i + 1))) 
+            {
+                System.out.println("Vowel pair: " + upperCaseInput.charAt(i) + upperCaseInput.charAt(i + 1));
+                vowelPairCount++;
+            }
+        }
+        System.out.println("Number of vowel pairs: " + vowelPairCount);
+    }
+}
