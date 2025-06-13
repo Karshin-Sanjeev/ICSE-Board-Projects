@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Project_18 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int num = scanner.nextInt();
+        int originalNum = num;
+        int digitCount = 0;
+        int sum = 0;
+        while (num > 0)
+        {
+            digitCount++;
+            num /= 10;
+        }
+        num = originalNum;
+        int position = digitCount;
+        while (num > 0) 
+        {
+            int digit = num % 10;
+            sum += Math.pow(digit, position);
+            position--;
+            num /= 10;
+        }
+        if (sum == originalNum) 
+        {
+            System.out.println(originalNum + " is a Disarium number.");
+        } 
+        else 
+        {
+            System.out.println(originalNum + " is not a Disarium number.");
+        }
+    }
+}
