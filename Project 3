@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class Project_3 
+{
+    public int Sum(int A, int B) 
+    {
+        int sum = 0;
+        for (int i = A; i <= B; i++) 
+        {
+            if (i % 2 == 0) 
+            {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+    public double Sum(double N) 
+    {
+        double sum = 1.0;
+        for (double i = 1.2; i <= N; i += 0.2)
+        {
+            sum *= i;
+        }
+        return sum;
+    }
+    public int Sum(int N) 
+    {
+        int sum = 0;
+        while (N > 0) 
+        {
+            int digit = N % 10;
+            if (digit % 2 != 0)
+            {
+                sum += digit;
+            }
+            N /= 10;
+        }
+        return sum;
+    }
+    public static void main(String[] args) 
+    {
+        Project_3 obj = new Project_3();
+        Scanner sc = new Scanner(System.in);
+        System.out.println ("Enter the value of A: ");
+        int A = sc.nextInt();
+        System.out.println ("Enter the value of B: ");
+        int B = sc.nextInt();
+        System.out.println ("Enter the value of N (double): ");
+        double N = sc.nextDouble();
+        System.out.println ("Enter the value of N (int): ");
+        int Nint = sc.nextInt();
+        int sum1 = obj.Sum(A, B);
+        System.out.println("Sum of even numbers: " + sum1);
+        double sum2 = obj.Sum(N);
+        System.out.println("Product of series: " + sum2);
+        int sum3 = obj.Sum(Nint);
+        System.out.println("Sum of odd digits: " + sum3);
+    }
+}
